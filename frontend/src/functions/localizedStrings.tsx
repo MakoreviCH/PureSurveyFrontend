@@ -100,6 +100,8 @@ export const ValidationErrorMessages = new LocalizedStrings({
     }
 });
 
+
+
 export const LoginFormLocalizedStrings = new LocalizedStrings({
         en:{
             loginText:"Login to Pure Survey",
@@ -118,6 +120,74 @@ export const LoginFormLocalizedStrings = new LocalizedStrings({
             alrHaveAcc:"В мене немає акаунта",
             logBtn:"Увійти",
             loginErrorValid:"Введені дані були невірними. Спробуйте ще раз.",
+        }
+    });
+
+    export const RegisterFormLocalizedStrings = new LocalizedStrings({
+        en:{
+            regText:"Register in Pure Survey",
+            emailInp:"Email",
+            passInp:"Password",
+            firstNameInp:"First Name",
+            lastNameInp:"Last Name",
+            forgotPass:"Forgot password",
+            alrHaveAcc:"Already registered",
+            regBtn:"Register",
+            loginErrorValid:"Entered data was invalid. Try again.",
+        },
+        ua: {
+            regText:"Зареєструйтеся в Pure Survey",
+            emailInp:"Електронна пошта",
+            passInp:"Пароль",
+            firstNameInp:"First Name",
+            lastNameInp:"Last Name",
+            forgotPass:"Забули пароль",
+            alrHaveAcc:"Вже зареєстрований",
+            regBtn:"Зареєструватися",
+            loginErrorValid:"Введені дані були невірними. Спробуйте ще раз.",
+        }
+    });
+
+    export const SurveyUnitLocalizedStrings = new LocalizedStrings({    
+        en:{
+            pageLabel:"Survey Units",
+            unitNameLabel:"Unit Name",
+            surveyNameLabel:"Unit Name",
+            dateByLabel:"Date By",
+            targetingLabel:"Targeting",
+            statusLabel:"Status",
+            feedbacksLabel:"Feedbacks",
+        },
+        ua: {
+            pageLabel:"Групи Опитувань",
+            unitNameLabel:"Група",
+            surveyNameLabel:"Опитування",
+            dateByLabel:"Дата до",
+            targetingLabel:"Таргетування",
+            statusLabel:"Статус",
+            feedbacksLabel:"Відгуки",
+        }
+    });
+
+    export const GeneralLocalizedStrings = new LocalizedStrings({
+        en:{
+            createButtonLabel:"CREATE",
+            nextButtonLabel:"NEXT",
+            backButtonLabel:"BACK",
+            saveButtonLabel:"SAVE",
+            cancelButtonLabel:"CANCEL",
+            rowsPerPageLabel:"Rows per page",
+            ofLabel:"of"
+
+        },
+        ua: {
+            createButtonLabel:"ДОДАТИ",
+            nextButtonLabel:"ДАЛІ",
+            backButtonLabel:"НАЗАД",
+            saveButtonLabel:"ЗБЕРЕГТИ",
+            cancelButtonLabel:"ВІДМІНА",
+            rowsPerPageLabel:"Рядків на сторінці",
+            ofLabel:"з"
         }
     });
 

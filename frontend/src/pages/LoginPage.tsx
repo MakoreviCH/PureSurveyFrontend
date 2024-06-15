@@ -9,8 +9,9 @@ const LoginPage = (props:{theme: string, setTheme: any}) => {
         <div data-theme={props.theme} className='login-wrapper'>
             <TopPanelComponent theme={props.theme} setTheme={props.setTheme}/>
             <div className='login-main-content-wrapper'>
-                <LoginMainLogo theme={props.theme.toString()}/>
+                <LoginMainLogo theme={props.theme}/>
                 <LoginForm theme={props.theme}/>
+
             </div>
             <ToastContainer
                 position="top-right"

@@ -3,6 +3,7 @@ html, body{
     margin: 0;
     padding: 0;
     background: var(--background);
+    height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -246,4 +247,177 @@ html, body{
 /* Show the dropdown content when the button is clicked */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .login-main-logo-wrapper {
+        display: none !important;
+    }
+}
+
+:root {
+    --background: white;
+    --background-secondary: #b8b8b8;
+    --background-third: #e2e2e2;
+    --text-primary: black;
+    --background-imagelogin: white;
+    --input: white;
+    --button-yellow: rgb(158, 142, 4);
+    --box-shadow-main: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    --button-blue: #8D97F2;
+    --button-blue-hover: #5f6def
+}
+[data-theme='dark'] {
+    --background: #494949;
+    --background-secondary: #313131;
+    --background-third: #212121;
+    --text-primary: white;
+    --background-imagelogin: #313131;
+    --input: #494949;
+    --button-yellow: rgba(255, 199, 0, 1);
+    --box-shadow-main: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    --button-blue: #8D97F2;
+    --button-blue-hover: #5f6def;
+}
+
+.register-wrapper {
+    background: var(--background);
+}
+
+.register-main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-form-wrapper {
+    padding: 5% 3%;
+    border: 1px solid var(--text-primary);
+    border-radius: 50px;
+    background: var(--background-imagelogin);
+    box-shadow: var(--box-shadow-main);
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-form-text {
+    font-size: 1.7rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-primary);
+    margin-bottom: 15%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.register-form-input {
+    width: 90%;
+    height: 3rem;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+    padding: 0 5%;
+    margin-bottom: 7%;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    background: var(--input);
+    color: var(--text-primary);
+}
+
+.register-form-input::placeholder {
+    color: var(--text-primary);
+    opacity: 0.5;
+}
+
+.register-form-input:focus::placeholder {
+    color: gray;
+}
+
+.register-form-additional-func {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8%;
+    font-size: 0.8rem;
+}
+
+.register-form-links {
+    text-decoration: underline;
+    color: var(--text-primary);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+}
+
+.register-form-buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-form-button-div {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #494949;
+    color: white;
+    border: none;
+}
+
+.register-form-button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.register-form-button-div:hover {
+    background: #494949;
+    transition: 0.7s ease;
+}
+
+.register-form-button:disabled {
+    cursor: no-drop;
+}
+
+.register-form-button:active:hover {
+    color: white;
+    transition: 0.7s ease;
+}
+
+.active-button-div {
+    background: var(--button-yellow);
+}
+
+.active-button {
+    color: white;
+}
+
+/* Show password icon*/
+
+.password-toggle-icon {
+    position: absolute;
+    right: 5%;
+    bottom: 24%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-primary);
 }

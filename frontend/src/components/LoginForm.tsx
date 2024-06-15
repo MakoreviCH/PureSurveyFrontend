@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {isEmail} from "../functions/stringFunctions";
 import {ILoginRequest} from "../interfaces/requests/ILoginRequest";
-import {login} from "../utils/FetchData";
+import {login} from "../utils/service/FetchData";
 import {IValidationErrorResponse} from "../interfaces/responses/IValidationErrorResponse";
 import {LoginFormLocalizedStrings} from "../functions/localizedStrings";
 import {getValidationErrorMessages} from "../functions/validationFuctions";
