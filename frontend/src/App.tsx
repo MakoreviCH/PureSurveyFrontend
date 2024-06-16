@@ -18,6 +18,7 @@ import EditSurveyUnitPage from './pages/create/EditUnitPage';
 import NotFound from './pages/NotFoundPage';
 import ProtectedRoute from './utils/ProtectedRoute';
 import RegisterPage from './pages/RegisterPage';
+import ProfilePage from './pages/ProfilePage';
 
   export default function App() {
 
@@ -48,7 +49,27 @@ import RegisterPage from './pages/RegisterPage';
             </Route>
             {/*Admin*/}
 
+            <Route element={<ProtectedRoute requiredRole="User" />}>
+              <Route path="/survey" element={<SurveyPage/>}/>
+              <Route path="/survey/create" element={<CreateSurveyPage/>}/>
+              <Route path="/survey/stats/:surveyId" element={<SurveyStatsPage/>}/>
 
+              <Route path="/appearance" element={<UnitAppearancePage/>}/>
+              <Route path="/appearance/create" element={<AppearancePage/>}/>
+              <Route path="/appearance/edit/:appearanceId" element={<AppearancePage />} />
+
+              <Route path="/survey-unit" element={<SurveyUnitPage/>}/>
+              <Route path="/survey-unit/create" element={<CreateSurveyUnitPage/>}/>
+              <Route path="/survey-unit/edit/:unitId" element={<EditSurveyUnitPage/>}/>
+
+              <Route path="/targeting" element={<TargetingViewPage/>}/>
+              <Route path="/targeting/create" element={<CreateTargetingPage/>}/>
+
+              <Route path="/profile" element={<ProfilePage/>}/>
+
+            </Route>
+            {/*Admin*/}
+            <Route path="/profile" element={<ProfilePage/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

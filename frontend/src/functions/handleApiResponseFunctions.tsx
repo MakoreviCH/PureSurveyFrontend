@@ -15,6 +15,8 @@ import {ApiErrorCodes} from "../enums/apiErrors";
 import { IUnitAppearanceResponse } from "../interfaces/responses/IUnitAppearanceResponse";
 import { ISurveyResponse } from "../interfaces/responses/ISurveyResponse";
 import { IStatsResponse } from "../interfaces/responses/IStatsResponse";
+import { ISubscriptionModel } from "../interfaces/responses/ISubscriptionResponse";
+import { IUserResponse } from "../interfaces/responses/IUserResponse";
 
 export function handleUserLoginResponse(res: any, nav: NavigateFunction) {
     if (res instanceof Object && 'errors' in res && 'status' in res) {
@@ -39,9 +41,6 @@ function handleLoginResponse(res: IBaseResponse<ILoginResponse>, nav: NavigateFu
         handleSuccessLoginResponse(res.data.accessToken.token, nav);
     }
 }
-
-
-
 
 
 const handleSuccessLoginResponse = (token: string, nav: NavigateFunction) => {
@@ -85,6 +84,23 @@ export function handleGetUnitResponse(res: any): ISurveyUnitResponse| undefined 
         return undefined;
     }
     else if(res as IBaseResponse<ISurveyUnitResponse>) {
+        return handleBaseResponse(res);
+    }
+    return undefined;
+}
+
+export function handleGetUserResponse<T>(res: any): T | undefined {
+    if (res instanceof Object && 'errors' in res && 'status' in res) {
+        const errorResponse = res as IValidationErrorResponse;
+
+        const errorMessages = getValidationErrorMessages(errorResponse);
+
+        errorMessages.forEach((errorMessage) => {
+            toast.error(localizeValidationError(errorMessage));
+        });
+        return undefined;
+    }
+    else if(res as IBaseResponse<T>) {
         return handleBaseResponse(res);
     }
     return undefined;
@@ -228,10 +244,8 @@ export function handleGetStatsResponse(res: any): IStatsResponse | undefined {
 }
 
 function handleBaseResponse(res: IBaseResponse<any>): any {
-    console.log(res);
     if (res.error !== null) {
         toast.error(localizeApiErrors(res.error.message));
-        console.log(res);
         return [];
     }
     else {
@@ -254,4 +268,22 @@ export function handleCreateResponse(res: any): any {
         return res.data;
     }
     return [];
+}
+
+
+export function handleApiSubscriptionResponse(res: any): ISubscriptionModel| undefined {
+    if (res instanceof Object && 'errors' in res && 'status' in res) {
+        const errorResponse = res as IValidationErrorResponse;
+
+        const errorMessages = getValidationErrorMessages(errorResponse);
+
+        errorMessages.forEach((errorMessage) => {
+            toast.error(localizeValidationError(errorMessage));
+        });
+        return undefined;
+    }
+    else if(res as IBaseResponse<ISubscriptionModel>) {
+        return handleBaseResponse(res);
+    }
+    return undefined;
 }

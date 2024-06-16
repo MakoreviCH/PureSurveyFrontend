@@ -35,6 +35,7 @@ export function TargetingStep({
   useEffect(() => {
     ;
 }, [selectedCountries]);
+
   const handleTargetingChange = (event: any) => {
     setParam("targetingId", event.target.value);
     let findedTarget = targetings.find((o)=>o.id ===event.target.value);

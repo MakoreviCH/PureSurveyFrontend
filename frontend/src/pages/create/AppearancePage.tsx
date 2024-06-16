@@ -8,7 +8,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { handleCreateResponse, handleGetAppearancesResponse, handleGetTemplatesResponse } from "../../functions/handleApiResponseFunctions";
 import { ITemplateResponse } from "../../interfaces/responses/ITemplateResponse";
-import { addUnitAppearance, getSystemTemplates, getAppearances, editUnitAppearance } from "../../utils/service/AppearanceService";
+import { addUnitAppearance, getAppearances, editUnitAppearance } from "../../utils/service/AppearanceService";
 import { SurveyUnitLocalizedStrings } from "../../functions/localizedStrings";
 import { GeneralLocalizedStrings } from "../../functions/localizedStrings";
 import TextField from '@mui/material/TextField';
@@ -22,6 +22,7 @@ import AlignHorizontalRightIcon from '@mui/icons-material/AlignHorizontalRight';
 import LayersIcon from '@mui/icons-material/Layers';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
 import { useNavigate, useParams } from 'react-router';
+import { getSystemTemplates } from '../../utils/service/TemplateService';
 
 const transformParams = (params: ParamObject): Param[] => {
   if (!params) return [];

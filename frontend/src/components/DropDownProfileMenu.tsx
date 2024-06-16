@@ -75,7 +75,7 @@ export default function AccountMenu() {
           <ListItemText primary="Jhon Dhou" secondary="email@gmail.com" />
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={(o)=>navigate('/profile')}>
           <ListItemIcon>
             <PersonIcon fontSize="medium" />
           </ListItemIcon>
